@@ -11,10 +11,20 @@ const api = axios.create({
 
 export const fetchForecast = async (params) => {
   try {
+    console.log('Making forecast request to:', `${API_BASE_URL}/forecast`);
+    console.log('Request params:', params);
+    
     const response = await api.post('/forecast', params);
+    console.log('Forecast response:', response.data);
     return response.data;
   } catch (error) {
-    console.error('Forecast API error:', error);
+    console.error('Forecast API error details:', {
+      message: error.message,
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      data: error.response?.data,
+      config: error.config
+    });
     throw error;
   }
 };

@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['*'], methods=['GET', 'POST', 'PUT', 'DELETE'], allow_headers=['Content-Type'])
 
 # Initialize models and APIs
 data_processor = DataProcessor()
@@ -28,6 +28,15 @@ lstm_model = LSTMModel()
 @app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy", "message": "Walmart Forecasting API is running"})
+
+@app.route('/api/test', methods=['GET'])
+def test_endpoint():
+    """Simple test endpoint"""
+    return jsonify({
+        'message': 'Backend is working!',
+        'timestamp': datetime.now().isoformat(),
+        'status': 'success'
+    })
 
 @app.route('/api/debug', methods=['GET'])
 def debug_info():
