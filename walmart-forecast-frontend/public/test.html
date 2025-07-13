@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Connection Test</h1>
+    <button onclick="testAPI()">Test API Connection</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                // Test health endpoint
+                const healthResponse = await fetch('https://walmart-forecast.onrender.com/api/health');
+                const healthData = await healthResponse.json();
+                
+                resultDiv.innerHTML += '<p>✅ Health endpoint: ' + JSON.stringify(healthData) + '</p>';
+                
+                // Test forecast endpoint
+                const forecastResponse = await fetch('https://walmart-forecast.onrender.com/api/forecast', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        sku_ids: ['SKU001'],
+                        store_ids: ['STORE001'],
+                        forecast_days: 7,
+                        model_type: 'arima'
+                    })
+                });
+                
+                const forecastData = await forecastResponse.json();
+                resultDiv.innerHTML += '<p>✅ Forecast endpoint: ' + JSON.stringify(forecastData) + '</p>';
+                
+            } catch (error) {
+                resultDiv.innerHTML += '<p>❌ Error: ' + error.message + '</p>';
+                console.error('API Test Error:', error);
+            }
+        }
+    </script>
+</body>
+</html> 
