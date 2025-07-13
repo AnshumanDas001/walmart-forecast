@@ -1,0 +1,103 @@
+{
+  "skus": [
+    {
+      "sku_id": "SKU001",
+      "name": "Premium Coffee Beans",
+      "category": "Beverages",
+      "price": 12.99,
+      "unit": "500g bag",
+      "supplier": "CoffeeCorp",
+      "lead_time_days": 7,
+      "min_order_quantity": 50
+    },
+    {
+      "sku_id": "SKU002", 
+      "name": "Organic Milk",
+      "category": "Dairy",
+      "price": 4.99,
+      "unit": "1L carton",
+      "supplier": "DairyFresh",
+      "lead_time_days": 3,
+      "min_order_quantity": 100
+    },
+    {
+      "sku_id": "SKU003",
+      "name": "Whole Grain Bread",
+      "category": "Bakery",
+      "price": 3.49,
+      "unit": "loaf",
+      "supplier": "BreadBakery",
+      "lead_time_days": 2,
+      "min_order_quantity": 75
+    },
+    {
+      "sku_id": "SKU004",
+      "name": "Fresh Bananas",
+      "category": "Produce",
+      "price": 1.99,
+      "unit": "bunch",
+      "supplier": "FruitCo",
+      "lead_time_days": 1,
+      "min_order_quantity": 200
+    },
+    {
+      "sku_id": "SKU005",
+      "name": "Chicken Breast",
+      "category": "Meat",
+      "price": 8.99,
+      "unit": "1lb pack",
+      "supplier": "MeatMaster",
+      "lead_time_days": 4,
+      "min_order_quantity": 60
+    }
+  ],
+  "stores": [
+    {
+      "store_id": "STORE001",
+      "name": "Walmart Supercenter - New York",
+      "location": "New York, NY",
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "size_sqft": 180000,
+      "opening_hours": "24/7",
+      "manager": "John Smith"
+    },
+    {
+      "store_id": "STORE002",
+      "name": "Walmart Supercenter - Los Angeles", 
+      "location": "Los Angeles, CA",
+      "latitude": 34.0522,
+      "longitude": -118.2437,
+      "size_sqft": 165000,
+      "opening_hours": "6AM-12AM",
+      "manager": "Sarah Johnson"
+    },
+    {
+      "store_id": "STORE003",
+      "name": "Walmart Supercenter - Chicago",
+      "location": "Chicago, IL", 
+      "latitude": 41.8781,
+      "longitude": -87.6298,
+      "size_sqft": 175000,
+      "opening_hours": "24/7",
+      "manager": "Mike Davis"
+    }
+  ],
+  "current_inventory": {
+    "SKU001_STORE001": 150,
+    "SKU001_STORE002": 200,
+    "SKU001_STORE003": 180,
+    "SKU002_STORE001": 300,
+    "SKU002_STORE002": 250,
+    "SKU002_STORE003": 275,
+    "SKU003_STORE001": 120,
+    "SKU003_STORE002": 100,
+    "SKU003_STORE003": 140,
+    "SKU004_STORE001": 400,
+    "SKU004_STORE002": 350,
+    "SKU004_STORE003": 380,
+    "SKU005_STORE001": 80,
+    "SKU005_STORE002": 90,
+    "SKU005_STORE003": 75
+  }
+} 
